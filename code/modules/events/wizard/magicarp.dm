@@ -7,7 +7,7 @@
 	description = "Summons a school of carps with magic projectiles."
 
 /datum/round_event/wizard/magicarp
-	announce_when	= 3
+	announce_when = 3
 	start_when = 50
 
 /datum/round_event/wizard/magicarp/setup()

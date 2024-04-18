@@ -93,8 +93,10 @@
 /mob/living/simple_animal/hostile/space_dragon/Initialize(mapload)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
+	ADD_TRAIT(src, TRAIT_HEALS_FROM_CARP_RIFTS, INNATE_TRAIT)
 	rift = new
 	rift.Grant(src)
+	AddSpell(new /obj/effect/proc_holder/spell/targeted/night_vision(src))
 
 /mob/living/simple_animal/hostile/space_dragon/Login()
 	. = ..()
@@ -559,6 +561,14 @@
 /obj/structure/carp_rift/Initialize(mapload)
 	. = ..()
 	START_PROCESSING(SSobj, src)
+	AddComponent( \
+		/datum/component/aura_healing, \
+		range = 1, \
+		simple_heal = 3, \
+		limit_to_trait = TRAIT_HEALS_FROM_CARP_RIFTS, \
+		healing_color = COLOR_BLUE, \
+	)
+
 
 /obj/structure/carp_rift/examine(mob/user)
 	. = ..()
@@ -582,12 +592,6 @@
 	return ..()
 
 /obj/structure/carp_rift/process(delta_time)
-	// Heal carp on our loc.
-	for(var/mob/living/simple_animal/hostile/hostilehere in loc)
-		if("carp" in hostilehere.faction)
-			hostilehere.adjustHealth(-5 * delta_time)
-			var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/heal(get_turf(hostilehere))
-			H.color = "#0000FF"
 
 	// If we're fully charged, just start mass spawning carp and move around.
 	if(charge_state == CHARGE_COMPLETED)

@@ -534,7 +534,7 @@
 /obj/structure/carp_rift
 	name = "carp rift"
 	desc = "A rift akin to the ones space carp use to travel long distances."
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 100, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100)
+	armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 100, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100)
 	max_integrity = 300
 	icon = 'icons/obj/carp_rift.dmi'
 	icon_state = "carp_rift_carpspawn"
@@ -548,7 +548,7 @@
 	/// The maximum charge the rift can have.
 	var/max_charge = 300
 	/// How many carp spawns it has available.
-	var/carp_stored = 1
+	var/carp_stored = 2
 	/// A reference to the Space Dragon that created it.
 	var/mob/living/simple_animal/hostile/space_dragon/dragon
 	/// Current charge state of the rift.
@@ -563,8 +563,8 @@
 	START_PROCESSING(SSobj, src)
 	AddComponent( \
 		/datum/component/aura_healing, \
-		range = 1, \
-		simple_heal = 3, \
+		range = 3, \
+		simple_heal = 4, \
 		limit_to_trait = TRAIT_HEALS_FROM_CARP_RIFTS, \
 		healing_color = COLOR_BLUE, \
 	)
@@ -626,7 +626,7 @@
 
 	// Can we increase the carp spawn pool size?
 	if(last_carp_inc >= carp_interval)
-		carp_stored++
+		carp_stored += 2
 		icon_state = "carp_rift_carpspawn"
 		if(light_color != LIGHT_COLOR_PURPLE)
 			light_color = LIGHT_COLOR_PURPLE
@@ -652,6 +652,7 @@
 			dragon.riftTimer = 0
 			dragon.rift_empower()
 		// Early return, nothing to do after this point.
+		carp_stored += 5
 		return
 
 	// Do we need to give a final warning to the station at the halfway mark?

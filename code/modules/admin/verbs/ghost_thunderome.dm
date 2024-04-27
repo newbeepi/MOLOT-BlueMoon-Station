@@ -109,7 +109,6 @@
         var/team_1_coeff = team_1_size / (team_2_size + team_1_size)
         var/team_1_players_num = round_down(team_1_coeff * candidates.len)
         var/team_2_players_num = candidates.len - team_1_players_num
-        message_admins("[team_1_coeff] [team_1_players_num] [team_2_players_num]")
         var/list/spawnpoints_t1 = GLOB.tdome1
         while(team_1_players_num)
           var/spawnloc = spawnpoints_t1[team_1_players_num]

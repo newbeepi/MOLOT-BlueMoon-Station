@@ -106,9 +106,15 @@
       SStgui.close_uis(src)
       var/list/mob/candidates = pollGhostCandidates("Do you wish to be considered for Thunderome?", "Thunderome", null)
       if(candidates.len > 0)
-        var/team_1_coeff = team_1_size / (team_2_size + team_1_size)
+        shuffle_inplace(candidates)
+        var/max_thunderome_players = team_1_size + team_2_size
+        if(candidates.len > max_thunderome_players)
+          LAZYCUT(candidates,  max_thunderome_players, candidates.len)
+        
+        var/team_1_coeff = team_1_size / (max_thunderome_players)
         var/team_1_players_num = round_down(team_1_coeff * candidates.len)
         var/team_2_players_num = candidates.len - team_1_players_num
+
         var/list/spawnpoints_t1 = GLOB.tdome1
         while(team_1_players_num)
           var/spawnloc = spawnpoints_t1[team_1_players_num]

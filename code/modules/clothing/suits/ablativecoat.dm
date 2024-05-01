@@ -9,7 +9,7 @@
 
 /obj/item/clothing/head/hooded/ablative/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
     if(def_zone == BODY_ZONE_HEAD)
-        if(prob(hit_reflect_chance))
+        if(prob(hit_reflect_chance) && is_energy_reflectable_projectile(object) && (attack_type & ATTACK_TYPE_PROJECTILE))
             block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_RETURN_TO_SENDER
             return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
     return ..()

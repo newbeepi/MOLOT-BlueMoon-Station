@@ -285,7 +285,7 @@
 
 ///datum/uplink_item/device_tools/encryptionkey
 // 	name = "InteQ Encryption Key"
-// 	desc = "A key that, when inserted into a radio headset, allows you to listen to all station department channels \
+// 	desc = "A key that, when inserted into a radio headset, allows you to listen to all station department channels
 // 			as well as talk on an encrypted InteQ channel with other agents that have the same key, and even communicate with raiders and nukies teams."
 // 	item = /obj/item/encryptionkey/inteq
 // 	cost = 2

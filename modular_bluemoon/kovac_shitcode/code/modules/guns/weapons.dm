@@ -347,7 +347,7 @@
 	name = "High Powered Chainsaw"
 	desc = "A high powered chainsaw for cutting up ...you know...."
 	item = /obj/item/chainsaw/doomslayer/inteq_chainsaw
-	cost = 18
+	cost = 16
 	purchasable_from = ~(UPLINK_SYNDICATE)
 
 /// Clown Ops Uplink additions

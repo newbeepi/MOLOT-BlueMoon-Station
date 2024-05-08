@@ -407,7 +407,7 @@
 	desc = "Набор очень древней брони, использовавшейся в первых космических войнах Солнечной федерацией. Для полного раскрытия потенциала этого полутонного куска керамита необходимо вживить специальный орган, значительно увеличивающий выживаемость и силу владельца. Пришло время доказать, что ты достоин зваться 'Ангелом смерти'."
 	item = /obj/item/storage/box/syndie_kit/spacehero
 	cost = 26
-	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+	purchasable_from = UPLINK_NUKE_OPS
 
 /datum/uplink_item/bundles_tc/grey
 	name = "The Greatest of the Greys"

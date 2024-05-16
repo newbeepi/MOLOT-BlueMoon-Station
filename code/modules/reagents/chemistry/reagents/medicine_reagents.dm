@@ -1353,6 +1353,10 @@
 	M.adjustOxyLoss(-15, FALSE)
 	M.adjustToxLoss(-5*REM, FALSE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -15*REM)
+	M.adjustCloneLoss(-3*REM, FALSE)
+	M.adjustStaminaLoss(-25*REM,FALSE)
+	if(M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
+		M.adjust_integration_blood(40) // blood fall out man bad
 	..()
 	. = 1
 
@@ -1372,6 +1376,10 @@
 	M.adjustOxyLoss(-10*REM, FALSE)
 	M.adjustToxLoss(-4*REM, FALSE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -10*REM)
+	M.adjustCloneLoss(-3*REM, FALSE)
+	M.adjustStaminaLoss(-8*REM,FALSE)
+	if(M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
+		M.adjust_integration_blood(3)
 	..()
 	. = 1
 

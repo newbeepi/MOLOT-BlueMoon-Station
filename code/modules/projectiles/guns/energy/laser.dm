@@ -3,7 +3,7 @@
 	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
 	icon_state = "laser"
 	item_state = "laser"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	custom_materials = list(/datum/material/iron=2000)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
@@ -59,6 +59,7 @@
 	item_state = "caplaser"
 	desc = "This is an antique laser gun. All craftsmanship is of the highest quality. It is decorated with assistant leather and chrome. The object menaces with spikes of energy. On the item is an image of Space Station 13. The station is exploding."
 	force = 10
+	w_class = WEIGHT_CLASS_NORMAL
 	ammo_x_offset = 3
 	selfcharge = EGUN_SELFCHARGE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF

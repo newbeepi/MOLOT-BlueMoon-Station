@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/automatic
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	var/alarmed = 0
 	var/select = 1
 	var/automatic_burst_overlay = TRUE
@@ -75,6 +75,7 @@
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	burst_shot_delay = 2
 	burst_size = 2
+	w_class = WEIGHT_CLASS_NORMAL
 	pin = /obj/item/firing_pin/implant/pindicate
 	can_bayonet = TRUE
 	knife_x_offset = 26
@@ -109,6 +110,10 @@
 	knife_x_offset = 25
 	knife_y_offset = 12
 	automatic_burst_overlay = FALSE
+
+/obj/item/gun/ballistic/automatic/wt550/Initialize(mapload)
+	..()
+	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
 
 /obj/item/gun/ballistic/automatic/wt550/afterattack()
 	. = ..()
@@ -450,6 +455,10 @@
 	actions_types = list()
 	fire_sound = 'sound/weapons/lasgun.ogg'
 	casing_ejector = FALSE
+
+/obj/item/gun/ballistic/automatic/laser/lasgun/Initialize(mapload)
+	..()
+	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
 
 /obj/item/gun/ballistic/automatic/laser/lasgun/update_icon_state()
 	icon_state = "boarding"

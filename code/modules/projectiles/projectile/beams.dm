@@ -23,9 +23,8 @@
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
-	damage = 25
-	wound_bonus = -20
-	bare_wound_bonus = 40
+	wound_bonus = 8
+	bare_wound_bonus = 12
 
 /obj/item/projectile/beam/laser/lasgun
 	damage = 12.5
@@ -35,7 +34,7 @@
 /obj/item/projectile/beam/laser/hellfire
 	name = "hellfire laser"
 	wound_bonus = 15
-	damage = 30
+	damage = 25
 	fire_hazard = TRUE
 
 /obj/item/projectile/beam/laser/hellfire/Initialize(mapload)

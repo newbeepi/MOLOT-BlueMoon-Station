@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/automatic
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	var/alarmed = 0
 	var/select = 1
 	var/automatic_burst_overlay = TRUE
@@ -104,6 +104,7 @@
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
 	can_suppress = FALSE
 	weapon_weight = WEAPON_HEAVY
+	w_class = WEIGHT_CLASS_BULKY
 	burst_size = 2
 	burst_shot_delay = 1
 	can_bayonet = TRUE
@@ -449,6 +450,8 @@
 	item_state = "laser-wielded"
 	mag_type = /obj/item/ammo_box/magazine/recharge/lasgun
 	automatic_burst_overlay = FALSE
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 	fire_delay = 2
 	can_suppress = FALSE
 	burst_size = 1

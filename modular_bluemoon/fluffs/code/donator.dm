@@ -623,3 +623,10 @@
 	path = /obj/item/jukebox/emagged
 	ckeywhitelist = list("smileycom")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/pet_alta
+	name = "Alta Cat"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/choice_beacon/pet/alta
+	ckeywhitelist = list("oni3288")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

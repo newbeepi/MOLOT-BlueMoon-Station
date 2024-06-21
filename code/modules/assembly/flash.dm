@@ -132,6 +132,7 @@
 			var/toblur = 20 - M.eye_blurry
 			if(toblur > 0)
 				M.blur_eyes(toblur)
+			SEND_SIGNAL(user, COMSIG_MOB_SUCCESSFUL_FLASHED_CARBON, M, src)
 		else if(user)
 			visible_message("<span class='disarm'>[user] не удалось ошеломить [M] флешером!</span>")
 			to_chat(user, "<span class='warning'>Тебе не удалось ошеломить [M] флешером!</span>")
